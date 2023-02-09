@@ -62,9 +62,55 @@ var definitelyFish: List<String?>? = null //define tanto elementos, como a próp
 
 //Caso queira se certificar que uma variável ou objeto é nulo é nula ao chamar um método ou uma ação sobre ela basta utilizar dois pontos de exclamação
 var comida: Int? = null
-comida!!.minus(3)
+//comida!!.minus(3) "Descomente essa linha para ver a incidencia do NullPointerException
 
 //Para salvar os programadores de vários if elses para tratamento de váriaveis nulas, a linguagem Kotlin oferece uma
 //forma mais simples co o uso do ponto de interrogação "?", ou operador Elvis
 var fishFoodTreats = 5
-print(fishFoodTreats?.dec() ?: 0)
+fishFoodTreats?.dec() ?: 0
+
+//Strings em Kotlin
+"Hello Fish"
+
+//Concatenando Strings
+"Hello" + " Fish"
+
+var numberOfFish = 5
+var numberOfPlants = 12
+
+//Para concatenar variáveis em Strings, basta utilizar o "$" e o nome da variável
+"Eu tenho $numberOfFish peixes and $numberOfPlants plantas"
+
+//Caso queira fazer alguma operação com as variáveis e concatená-la con em uma String basta utilizar
+//as chaves "{}" antecedidas pelo "$"
+"Eu tenho ${numberOfFish + numberOfPlants} peixes e plantas"
+
+//Assim como em outras linguagens, Kotlin possui operadores comparativos
+val peixes = "peixes"
+val plantas = "plantas"
+
+peixes == plantas //iguais
+peixes != plantas //diferentes
+numberOfFish >= numberOfPlants //maior ou igual
+numberOfFish <= numberOfPlants //menor ou igual
+
+numberOfFish = 50
+numberOfPlants = 23
+
+//Condições em Kotlin são expressadas usando o "if/else" e o "when"
+//"if/elses" avaliam qualquer condição, podendo utilizar expressões complexas e relações
+if (numberOfFish > numberOfPlants) println("Beleza!")
+else println("Proporção errada")
+
+//Kotlin pode ser mais flexivel quanto a condições usando "ranges"
+if (numberOfFish in 1..100) println(numberOfFish)
+
+//É a forma do Kotlin de reproduzir o switch/case, fazendo uma comparação de igualdade de valores,
+//utilizando uma expressão
+when (numberOfFish) {
+    0 -> println("Tanque Vazio")
+    50 -> println("Tanque Cheio")
+    else -> println("Perfeito")
+}
+
+
